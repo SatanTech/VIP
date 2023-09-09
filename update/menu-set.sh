@@ -37,91 +37,91 @@ fi
 
 ssh=$(service ssh status | grep active | cut -d ' ' $stat)
 if [ "$ssh" = "active" ]; then
-ressh="${green}ONLINE${NC}"
+ressh="${GREEN}ONLINE${NC}"
 else
-ressh="${red}OFFLINE${NC}"
+ressh="${RED}OFFLINE${NC}"
 fi
 sshstunel=$(service stunnel4 status | grep active | cut -d ' ' $stat)
 if [ "$sshstunel" = "active" ]; then
-resst="${green}ONLINE${NC}"
+resst="${GREEN}ONLINE${NC}"
 else
-resst="${red}OFFLINE${NC}"
+resst="${RED}OFFLINE${NC}"
 fi
 sshws=$(service ws-dropbear status | grep active | cut -d ' ' $stat)
 if [ "$sshws" = "active" ]; then
-rews="${green}ONLINE${NC}"
+rews="${GREEN}ONLINE${NC}"
 else
-rews="${red}OFFLINE${NC}"
+rews="${RED}OFFLINE${NC}"
 fi
 
 sshws2=$(service ws-stunnel status | grep active | cut -d ' ' $stat)
 if [ "$sshws2" = "active" ]; then
-rews2="${green}ONLINE${NC}"
+rews2="${GREEN}ONLINE${NC}"
 else
-rews2="${red}OFFLINE${NC}"
+rews2="${RED}OFFLINE${NC}"
 fi
 
 db=$(service dropbear status | grep active | cut -d ' ' $stat)
 if [ "$db" = "active" ]; then
-resdb="${green}ONLINE${NC}"
+resdb="${GREEN}ONLINE${NC}"
 else
-resdb="${red}OFFLINE${NC}"
+resdb="${RED}OFFLINE${NC}"
 fi
 
 slow=$(service client-sldns status | grep active | cut -d ' ' $stat)
 if [ "$slow" = "active" ]; then
-reslow="${green}ONLINE${NC}"
+reslow="${GREEN}ONLINE${NC}"
 else
-reslow="${red}OFFLINE${NC}"
+reslow="${RED}OFFLINE${NC}"
 fi
  
 v2r=$(service $rekk status | grep active | cut -d ' ' $stat)
 if [ "$v2r" = "active" ]; then
-resv2r="${green}ONLINE${NC}"
+resv2r="${GREEN}ONLINE${NC}"
 else
-resv2r="${red}OFFLINE${NC}"
+resv2r="${RED}OFFLINE${NC}"
 fi
 vles=$(service $rekk status | grep active | cut -d ' ' $stat)
 if [ "$vles" = "active" ]; then
-resvles="${green}ONLINE${NC}"
+resvles="${GREEN}ONLINE${NC}"
 else
-resvles="${red}OFFLINE${NC}"
+resvles="${RED}OFFLINE${NC}"
 fi
 trj=$(service $rekk status | grep active | cut -d ' ' $stat)
 if [ "$trj" = "active" ]; then
-restr="${green}ONLINE${NC}"
+restr="${GREEN}ONLINE${NC}"
 else
-restr="${red}OFFLINE${NC}"
+restr="${RED}OFFLINE${NC}"
 fi
 
 ningx=$(service nginx status | grep active | cut -d ' ' $stat)
 if [ "$ningx" = "active" ]; then
-resnx="${green}ONLINE${NC}"
+resnx="${GREEN}ONLINE${NC}"
 else
-resnx="${red}OFFLINE${NC}"
+resnx="${RED}OFFLINE${NC}"
 fi
 
 squid=$(service squid status | grep active | cut -d ' ' $stat)
 if [ "$squid" = "active" ]; then
-ressq="${green}ONLINE${NC}"
+ressq="${GREEN}ONLINE${NC}"
 else
-ressq="${red}OFFLINE${NC}"
+ressq="${RED}OFFLINE${NC}"
 fi
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " ${COLBG1}             • SERVER STATUS •          ${NC} "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "   • SSH & VPN                • $ressh"
-echo -e "   • SQUID                    • $ressq"
-echo -e "   • DROPBEAR                 • $resdb"
-echo -e "   • NGINX                    • $resnx"
-echo -e "   • SLOWDNS                  • $reslow"
-echo -e "   • WS DROPBEAR              • $rews"
-echo -e "   • WS STUNNEL               • $rews2"
-echo -e "   • STUNNEL                  • $resst"
-echo -e "   • XRAY-SS                  • $resv2r"
-echo -e "   • XRAY                     • $resv2r"
-echo -e "   • VLESS                    • $resvles"
-echo -e "   • TROJAN                   • $restr"
+echo -e "   • \033[0;34mSSH & VPN                ${NC}• $ressh"
+echo -e "   • \033[0;34mSQUID                    ${NC}• $ressq"
+echo -e "   • \033[0;34mDROPBEAR                 ${NC}• $resdb"
+echo -e "   • \033[0;34mNGINX                    ${NC}• $resnx"
+echo -e "   • \033[0;34mSLOWDNS                  ${NC}• $reslow"
+echo -e "   • \033[0;34mWS DROPBEAR              ${NC}• $rews"
+echo -e "   • \033[0;34mWS STUNNEL               ${NC}• $rews2"
+echo -e "   • \033[0;34mSTUNNEL                  ${NC}• $resst"
+echo -e "   • \033[0;34mXRAY-SS                  ${NC}• $resv2r"
+echo -e "   • \033[0;34mXRAY                     ${NC}• $resv2r"
+echo -e "   • \033[0;34mVLESS                    ${NC}• $resvles"
+echo -e "   • \033[0;34mTROJAN                   •${NC} $restr"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"

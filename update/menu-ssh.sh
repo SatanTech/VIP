@@ -39,66 +39,11 @@ echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━�
 echo -e " ${COLBG1}            • SSH PANEL MENU •          ${NC} "
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 read -p "   Username : " Login
-read -p "   Owner     : " OWNER
-read -p "Input Id Grup (-1001911868043) : " CHATIDGC
-CEKFILE=/etc/xray/ssh.txt
-if [ -f "$CEKFILE" ]; then
-file001="OK"
-else
-touch /etc/xray/ssh.txt
-fi
-
-if grep -qw "$Login" /etc/xray/ssh.txt; then
-echo -e "  [Error] Username \e[31m$Login\e[0m already exist"
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-read -n 1 -s -r -p "  Press any key to back on menu"
-menu-ssh
-else
-echo "$Login" >> /etc/xray/ssh.txt
-fi
-
-if [ -z $Login ]; then
-echo -e " [Error] Username cannot be empty "
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-read -n 1 -s -r -p "    Press any key to back on menu"
-menu-ssh
-fi
-
 read -p "   Password : " Pass
-if [ -z $Pass ]; then
-echo -e "  [Error] Password cannot be empty "
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ssh
-fi
 read -p "   Expired (hari): " masaaktif
-if [ -z $masaaktif ]; then
-echo -e "  [Error] EXP Date cannot be empty "
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
-menu-ssh
-fi
-#####BOT-TRX
-END
-<☘️🔥TRX="
-<code>INFO MASKU -Transaksi</code>
-<code>────────────────────</code>
-<b>  ⚠️TRANSAKSI SSH OVPN⚠️      </b>
-<code>────────────────────</code>
-<code>🌟Owner   : $OWNER</code>
-<code>🌟Detail  : $AKUN</code>
-<code>🌟Durasi  : $exp</code>
-<code>🌟Server  : $domen</code>
-<code>────────────────────</code>
-<i>Notifikasi Via RstoreBOT</i>
-<b>Tele : @kytxz</b>
-"
-curl -s --max-time $TIMES -d "chat_id=$CHATIDGC&disable_web_page_preview=1&text=$TRX&parse_mode=html" $URL
-clear
+
 ###########
 IP=$(curl -sS ifconfig.me);
 ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
