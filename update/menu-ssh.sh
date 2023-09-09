@@ -4,9 +4,6 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 AKUN="AKUN SSH"
 TIMES="10"
-CHATID="1210833546"
-KEY="6006599143:AAEgstCAioq35JgX97HaW_G3TAkLKzLZS_w"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m" 
@@ -41,10 +38,7 @@ echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━�
 read -p "   Username : " Login
 read -p "   Password : " Pass
 read -p "   Expired (hari): " masaaktif
-echo ""
-read -n 1 -s -r -p "  Press any key to back on menu"
 
-###########
 IP=$(curl -sS ifconfig.me);
 ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
@@ -512,6 +506,7 @@ echo -e "\033[1;93m〔⎆〕 ${grenbo}4.${NC} \033[0;36mEnable Ws SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}5.${NC} \033[0;36mDelete SSH Account${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}6.${NC} \033[0;36mRenew SSH${NC}"
 echo -e "\033[1;93m〔⎆〕 ${grenbo}7.${NC} \033[0;36mCek Member SSH${NC}"
+echo -e ""
 echo -e "\033[1;93m〔⎆〕 ${grenbo}8.${NC} \033[0;36mGo Back Menu${NC}"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
